@@ -18,7 +18,7 @@
   
   Program *program = [tokeniser tokenise:rawCode];
   
-  ComputerMemory *computerMemory = [[ComputerMemory alloc] init];
+  ComputerMemory *computerMemory = [[ComputerMemory alloc] initWithCapacity:1000 delegate:nil];
   
   Interpreter *interpreter = [[Interpreter alloc] initWithProgram:program memory:computerMemory];
   
@@ -35,7 +35,7 @@
   
   Program *program = [tokeniser tokenise:rawCode];
  
-  ComputerMemory *computerMemory = [[ComputerMemory alloc] init];
+  ComputerMemory *computerMemory = [[ComputerMemory alloc] initWithCapacity:1000 delegate:nil];
   
   Interpreter *interpreter = [[Interpreter alloc] initWithProgram:program memory:computerMemory];
   
@@ -59,7 +59,7 @@
   
   Program *program = [tokeniser tokenise:rawCode];
  
-  ComputerMemory *computerMemory = [[ComputerMemory alloc] init];
+  ComputerMemory *computerMemory = [[ComputerMemory alloc] initWithCapacity:1000 delegate:nil];
   
   Interpreter *interpreter = [[Interpreter alloc] initWithProgram:program memory:computerMemory];
   
@@ -77,7 +77,7 @@
   
   Program *program = [tokeniser tokenise:rawCode];
   
-  ComputerMemory *computerMemory = [[ComputerMemory alloc] init];
+  ComputerMemory *computerMemory = [[ComputerMemory alloc] initWithCapacity:1000 delegate:nil];
   
   Interpreter *interpreter = [[Interpreter alloc] initWithProgram:program memory:computerMemory];
   

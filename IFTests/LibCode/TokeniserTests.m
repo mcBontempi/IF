@@ -44,8 +44,6 @@
   
   Program *program = [tokeniser tokenise:rawCode];
   
-  NSLog(@"%@", [program debugDescription]);
-  
   XCTAssertEqual(program.numLines, 14, @"number of lines should be 14");
 }
 

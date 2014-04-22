@@ -11,6 +11,12 @@
     id<MemoryWritable> _delegate;
 }
 
+- (instancetype)init
+{
+  assert(0);
+  return nil;
+}
+
 - (instancetype)initWithCapacity:(NSUInteger)capacity delegate:(id<MemoryWritable>) delegate
 {
     if (self = [super init]) {

@@ -37,6 +37,11 @@
   [_memory writeToAddress:address.integerValue withValue:_accumulator];
 }
 
+- (void)WRITEINDIRECT:(NSString *)addressOfAddress
+{
+  [_memory writeToAddress:[_memory readFromAddress:addressOfAddress.integerValue] withValue:_accumulator];
+}
+
 - (void)READ:(NSString *)address
 {
   _accumulator = [_memory readFromAddress:address.integerValue];
@@ -55,8 +60,6 @@
       
       NSString *scannedOpcode = [_program.lines[i] opcode];
       
-      NSLog(@"%@ %@", label, scannedOpcode);
-      
       // have we found a label that matches?
       if ([label isEqualToString:scannedOpcode]) {
         _programCounter = i;
@@ -74,16 +77,29 @@
 
 #pragma mark - interpreter
 
+- (BOOL)hasNotFinished
+{
+  return _programCounter < _program.numLines;
+}
+
 - (NSInteger)run
-{ 
+{
+  NSUInteger retVal = 0;
+  
   while (_programCounter < _program.numLines) {
+    retVal = [self runNextLine];
+  }
+  
+  return retVal;
+}
+
+- (NSInteger)runNextLine
+{ 
     // this really is it, im using strings....
     // Why not though, makes debugging (in the developent of IF) easier
     
     Line *currentLine = _program.lines[_programCounter];
-    
-    NSLog(@"A:%04ld PC:%04lu LINE:%@", (signed long)_accumulator, (unsigned long)_programCounter, currentLine.debugDescription);
-    
+  
     NSString *opcode = currentLine.opcode;
     NSString *value = currentLine.value;
     
@@ -93,6 +109,9 @@
     }
     else if ([opcode isEqualToString:@"WRITE"]) {
       [self WRITE:value];
+    }
+    else if ([opcode isEqualToString:@"WRITEINDRECT"]) {
+      [self WRITEINDIRECT:value];
     }
     else if ([opcode isEqualToString:@"READ"]) {
       [self READ:value];
@@ -114,11 +133,7 @@
       assert(0);
     }
     
-    NSLog(@"%@", [_memory debugDescription]);
-    
     _programCounter++;
-    
-  }
   
   return _accumulator;
 }
