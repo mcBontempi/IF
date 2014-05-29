@@ -1,30 +1,22 @@
-//
-//  FirstViewController.m
-//  IF
-//
-//  Created by Daren David Taylor on 22/04/2014.
-//  Copyright (c) 2014 com.DDT. All rights reserved.
-//
-
 #import "FirstViewController.h"
 #import "CharGridVIew.h"
 #import "Tokeniser.h"
 #import "Program.h"
 #import "Interpreter.h"
 #import "ComputerMemory.h"
+#import "StandardRegisters.h"
 
 
 const NSUInteger KInitialMemoryInBytes = 10000;
 
-@interface FirstViewController ()
-
-@end
-
 @implementation FirstViewController {
   
   __weak IBOutlet CharGridView *_charGridView;
+  __weak IBOutlet UITextView *_textView;
   
   Interpreter *_interpreter;
+  
+  StandardRegisters *_standardRegisters;
 }
 
 - (void)viewDidLoad
@@ -33,7 +25,9 @@ const NSUInteger KInitialMemoryInBytes = 10000;
   
   [_charGridView setupWithRows:10 colCount:10];
   
-  [self startPressed:nil];
+  _textView.text = [self helloCode];
+  
+ // [self startPressed:nil];
 }
 
 - (NSString *)simpleLoopWiteCharOutToDsplayCode
@@ -76,19 +70,75 @@ const NSUInteger KInitialMemoryInBytes = 10000;
   "IF LOOPOUTER:";
 }
 
+- (NSString*)helloCode
+{
+  return @""
+  "SET 32\n"
+  "WRITE 2\n"
+  "SET 72\n"
+  "WRITE 3\n"
+  "SET 69\n"
+  "WRITE 4\n"
+  "SET 76\n"
+  "WRITE 5\n"
+  "WRITE 6\n"
+  "SET 79\n"
+  "WRITE 7\n"
+  "SET 32\n"
+  "WRITE 8\n"
+  
+  "SET 1000\n"
+  "WRITE 1\n"
 
+  "WRITE 20\n"
+  
+  
+  "SCROLLLOOP:\n"
+  "READ 20\n"
+  "ADD 1\n"
+  "WRITE 20\n"
+  "WRITE 1\n"
+  
+  
+  "SET 2\n"
+  "WRITE 0\n"
+
+  
+  "LOOP:\n"
+  "READINDRECT 0\n"
+  "WRITEINDRECT 1\n"
+  
+  "READ 1\n"
+  "ADD 1\n"
+  "WRITE 1\n"
+  "READ 0\n"
+  "ADD 1\n"
+  "WRITE 0\n"
+  
+  "ADD -9\n"
+  "IF LOOP:\n"
+  
+  "READ 1\n"
+  "ADD -1110\n"
+  "IF SCROLLLOOP:";
+
+}
 
 - (IBAction)startPressed:(id)sender
 {
+  [_textView resignFirstResponder];
+  
   Tokeniser *tokeniser = [[Tokeniser alloc] init];
   
-  NSString *rawCode = [self indirectAddressingCode];
+  NSString *rawCode = _textView.text;
   
   Program *program = [tokeniser tokenise:rawCode];
   
   ComputerMemory *computerMemory = [[ComputerMemory alloc] initWithCapacity:KInitialMemoryInBytes delegate:self];
   
-  _interpreter = [[Interpreter alloc] initWithProgram:program memory:computerMemory];
+  _standardRegisters = [StandardRegisters standardRegisters];
+  
+  _interpreter = [[Interpreter alloc] initWithProgram:program memory:computerMemory registers:_standardRegisters];
   
   [self run];
 }
@@ -96,6 +146,8 @@ const NSUInteger KInitialMemoryInBytes = 10000;
 - (void)run
 {
   [_interpreter runNextLine];
+  
+  _textView.
   
   if  ([_interpreter hasNotFinished]) {
     [self performSelector:@selector(run) withObject:nil afterDelay:0.00];

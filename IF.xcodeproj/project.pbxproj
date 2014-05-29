@@ -16,7 +16,6 @@
 		D6611EAF1906CC94006B2275 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6611EAD1906CC94006B2275 /* Main_iPhone.storyboard */; };
 		D6611EB21906CC94006B2275 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6611EB01906CC94006B2275 /* Main_iPad.storyboard */; };
 		D6611EB51906CC94006B2275 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6611EB41906CC94006B2275 /* FirstViewController.m */; };
-		D6611EB81906CC94006B2275 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6611EB71906CC94006B2275 /* SecondViewController.m */; };
 		D6611EBA1906CC94006B2275 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6611EB91906CC94006B2275 /* Images.xcassets */; };
 		D6611EC11906CC94006B2275 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6611EC01906CC94006B2275 /* XCTest.framework */; };
 		D6611EC21906CC94006B2275 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6611E9B1906CC94006B2275 /* Foundation.framework */; };
@@ -36,6 +35,7 @@
 		D6611EFC1906CDDA006B2275 /* InterpreterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D6611EFA1906CDDA006B2275 /* InterpreterTests.m */; };
 		D6611EFD1906CDDA006B2275 /* TokeniserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D6611EFB1906CDDA006B2275 /* TokeniserTests.m */; };
 		D6611F001906CEF8006B2275 /* CharGridVIew.m in Sources */ = {isa = PBXBuildFile; fileRef = D6611EFF1906CEF8006B2275 /* CharGridVIew.m */; };
+		FD36BB891913693B00DEB91E /* StandardRegisters.m in Sources */ = {isa = PBXBuildFile; fileRef = FD36BB881913693B00DEB91E /* StandardRegisters.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,8 +63,6 @@
 		D6611EB11906CC94006B2275 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		D6611EB31906CC94006B2275 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
 		D6611EB41906CC94006B2275 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		D6611EB61906CC94006B2275 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		D6611EB71906CC94006B2275 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		D6611EB91906CC94006B2275 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D6611EBF1906CC94006B2275 /* IFTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IFTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6611EC01906CC94006B2275 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -88,6 +86,12 @@
 		D6611EFE1906CEF8006B2275 /* CharGridVIew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharGridVIew.h; sourceTree = "<group>"; };
 		D6611EFF1906CEF8006B2275 /* CharGridVIew.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CharGridVIew.m; sourceTree = "<group>"; };
 		D6611F011906D645006B2275 /* MemoryReadable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MemoryReadable.h; path = LibCode/MemoryReadable.h; sourceTree = "<group>"; };
+		FD36BB871913693B00DEB91E /* StandardRegisters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StandardRegisters.h; path = LibCode/StandardRegisters.h; sourceTree = "<group>"; };
+		FD36BB881913693B00DEB91E /* StandardRegisters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StandardRegisters.m; path = LibCode/StandardRegisters.m; sourceTree = "<group>"; };
+		FD36BB8A1913699100DEB91E /* Registers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Registers.h; path = LibCode/Registers.h; sourceTree = "<group>"; };
+		FDFE52B3190A9D49006D5A80 /* libOCMock.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libOCMock.a; path = IFTests/libOCMock.a; sourceTree = "<group>"; };
+		FDFE52B5190AA0BD006D5A80 /* libOCMock.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libOCMock.a; path = usr/include/libOCMock.a; sourceTree = "<group>"; };
+		FDFE52B8190D09FA006D5A80 /* libOCMock.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libOCMock.a; path = usr/lib/libOCMock.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +140,9 @@
 		D6611E9A1906CC94006B2275 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FDFE52B8190D09FA006D5A80 /* libOCMock.a */,
+				FDFE52B5190AA0BD006D5A80 /* libOCMock.a */,
+				FDFE52B3190A9D49006D5A80 /* libOCMock.a */,
 				D6611E9B1906CC94006B2275 /* Foundation.framework */,
 				D6611E9D1906CC94006B2275 /* CoreGraphics.framework */,
 				D6611E9F1906CC94006B2275 /* UIKit.framework */,
@@ -154,8 +161,6 @@
 				D6611EB01906CC94006B2275 /* Main_iPad.storyboard */,
 				D6611EB31906CC94006B2275 /* FirstViewController.h */,
 				D6611EB41906CC94006B2275 /* FirstViewController.m */,
-				D6611EB61906CC94006B2275 /* SecondViewController.h */,
-				D6611EB71906CC94006B2275 /* SecondViewController.m */,
 				D6611EB91906CC94006B2275 /* Images.xcassets */,
 				D6611EA21906CC94006B2275 /* Supporting Files */,
 				D6611EFE1906CEF8006B2275 /* CharGridVIew.h */,
@@ -210,6 +215,9 @@
 				D6611EE01906CCF7006B2275 /* Program.m */,
 				D6611EE11906CCF7006B2275 /* Tokeniser.h */,
 				D6611EE21906CCF7006B2275 /* Tokeniser.m */,
+				FD36BB871913693B00DEB91E /* StandardRegisters.h */,
+				FD36BB881913693B00DEB91E /* StandardRegisters.m */,
+				FD36BB8A1913699100DEB91E /* Registers.h */,
 			);
 			name = LibCode;
 			sourceTree = "<group>";
@@ -321,7 +329,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D6611EB81906CC94006B2275 /* SecondViewController.m in Sources */,
 				D6611EE31906CCF7006B2275 /* ComputerMemory.m in Sources */,
 				D6611EE71906CCF7006B2275 /* Line.m in Sources */,
 				D6611EEB1906CCF7006B2275 /* Tokeniser.m in Sources */,
@@ -330,6 +337,7 @@
 				D6611F001906CEF8006B2275 /* CharGridVIew.m in Sources */,
 				D6611EB51906CC94006B2275 /* FirstViewController.m in Sources */,
 				D6611EE51906CCF7006B2275 /* Interpreter.m in Sources */,
+				FD36BB891913693B00DEB91E /* StandardRegisters.m in Sources */,
 				D6611EA81906CC94006B2275 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -508,7 +516,26 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SRCROOT)/usr/include",
+				);
 				INFOPLIST_FILE = "IFTests/IFTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/IFTests",
+					"$(PROJECT_DIR)/usr/include",
+					"$(PROJECT_DIR)/usr/lib",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					XCTest,
+					"-force_load",
+					"$(SRCROOT)/usr/lib/libOCMock.a",
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -526,7 +553,26 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "IF/IF-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SRCROOT)/usr/include",
+				);
 				INFOPLIST_FILE = "IFTests/IFTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/IFTests",
+					"$(PROJECT_DIR)/usr/include",
+					"$(PROJECT_DIR)/usr/lib",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					XCTest,
+					"-force_load",
+					"$(SRCROOT)/usr/lib/libOCMock.a",
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -552,6 +598,7 @@
 				D6611ED21906CC94006B2275 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D6611ED31906CC94006B2275 /* Build configuration list for PBXNativeTarget "IFTests" */ = {
 			isa = XCConfigurationList;
@@ -560,6 +607,7 @@
 				D6611ED51906CC94006B2275 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

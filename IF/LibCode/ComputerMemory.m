@@ -50,6 +50,8 @@
 
 - (NSInteger)readFromAddress:(NSUInteger)address
 {
+  NSLog(@"%d", address);
+  
     return [self.memory[address] integerValue];
 }
 
