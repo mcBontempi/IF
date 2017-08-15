@@ -147,7 +147,7 @@ const NSUInteger KInitialMemoryInBytes = 10000;
 {
   [_interpreter runNextLine];
   
-  _textView.
+ // _textView.
   
   if  ([_interpreter hasNotFinished]) {
     [self performSelector:@selector(run) withObject:nil afterDelay:0.00];
